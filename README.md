@@ -9,6 +9,10 @@ requirements for such a low powered device.
 The current revision here does not parse the fields contained within the NMEA
 sentences, but simply extracts each sentence and validates the checksum.
 
+NMEA is the common name for [NMEA 0183](http://en.wikipedia.org/wiki/NMEA_0183) a
+specification that defines a protocol for communication between electronic devices,
+like most GPS units.
+
 Use
 =====
 To use, simply create an Parser instance and feed it's `parse()` method bytes. When
