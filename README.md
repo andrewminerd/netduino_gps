@@ -29,8 +29,8 @@ Example:
 byte[] in;
 for (int i = 0; i < in.Length; i++) {
   if (parser.parse(in[i])) {
-	  System.Console.Write("Parsed a full sentence!");
-	}
+    System.Console.Write("Parsed a full sentence!");
+  }
 }
 ```
 
@@ -60,6 +60,7 @@ namespace gps_test
       input.Open();
       while (true);
     }
+  }
 }
 ```
 
