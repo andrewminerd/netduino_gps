@@ -11,7 +11,8 @@ sentences, but simply extracts each sentence and validates the checksum.
 
 NMEA is the common name for [NMEA 0183](http://en.wikipedia.org/wiki/NMEA_0183): a
 specification that defines a protocol for communication between electronic devices,
-like most GPS units.
+like most GPS units. By default, NMEA compatible GPS devices communicate over a serial
+port at 4800 baud, 8N1.
 
 Use
 =====
@@ -69,3 +70,4 @@ References
 To learn more about the NMEA format, see:
 
 * http://www.gpsinformation.org/dale/nmea.htm
+* http://en.wikipedia.org/wiki/NMEA_0183
