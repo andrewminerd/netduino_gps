@@ -21,7 +21,7 @@ in the `cmd` property. The length of the command is available in the `offset` pr
 
 Currently, the Parser allocates a 1k buffer to hold the parsed commands. This is
 probably far more than is actually required; if you find that you're exhausting
-the RAM of your Netduino, feel free to tune this.
+running out of memory, feel free to tune this.
 
 Example:
 
