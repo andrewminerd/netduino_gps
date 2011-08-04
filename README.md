@@ -44,13 +44,19 @@ namespace gps_test
     static byte[] buff = new byte[64];
     static NmeaParser parser = new NmeaParser();
 
-    private static void onRecv(Object sender, SerialDataReceivedEventArgs args) {
+    private static void onRecv(Object sender, SerialDataReceivedEventArgs args)
+    {
       SerialPort input = (SerialPort)sender;
-      var read = input.Read(buff, 0, input.BytesToRead < 64 ? input.BytesToRead : 64);
-      for (int i = 0; i < read; i++) {
-        if (parser.parse(buff[i])) {
-          Debug.Print(new String(Encoding.UTF8.GetChars(parser.cmd)));
+
+      int avail = input.BytesToRead;
+      while (avail > 0) {
+        var read = input.Read(buff, 0, avail < 64 ? avail : 64);
+        for (int i = 0; i < read; i++) {
+          if (parser.parse(buff[i])) {
+            Debug.Print(new String(Encoding.UTF8.GetChars(parser.cmd)));
+          }
         }
+        avail -= read;
       }
     }
 
