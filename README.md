@@ -15,7 +15,7 @@ like most GPS units.
 
 Use
 =====
-To use, simply create an Parser instance and feed it's `parse()` method bytes. When
+To use, simply create a Parser instance and feed bytes to its `parse()` method. When
 the parse method returns true, a full sentence has been parsed and is available
 in the `cmd` property. The length of the command is available in the `offset` property.
 
