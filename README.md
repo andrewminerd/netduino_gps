@@ -34,4 +34,5 @@ References
 ==========
 
 To learn more about the NMEA format, see:
+
 * http://www.gpsinformation.org/dale/nmea.htm
