@@ -41,22 +41,15 @@ namespace gps_test
 {
   public class Program
   {
-    static byte[] buff = new byte[64];
     static NmeaParser parser = new NmeaParser();
 
-    private static void onRecv(Object sender, SerialDataReceivedEventArgs args)
-    {
+    private static void onRecv(Object sender, SerialDataReceivedEventArgs args) {
       SerialPort input = (SerialPort)sender;
-
       int avail = input.BytesToRead;
-      while (avail > 0) {
-        var read = input.Read(buff, 0, avail < 64 ? avail : 64);
-        for (int i = 0; i < read; i++) {
-          if (parser.parse(buff[i])) {
-            Debug.Print(new String(Encoding.UTF8.GetChars(parser.cmd)));
-          }
+      while (avail-- > 0) {
+        if (parser.parse(input.ReadByte())) {
+          Debug.Print(new String(Encoding.UTF8.GetChars(parser.cmd)));
         }
-        avail -= read;
       }
     }
 
