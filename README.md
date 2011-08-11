@@ -6,9 +6,6 @@ the .NET Micro Framework. With a 48MHz ARM processor and only about 60KB of RAM,
 it is extremely resource constrained. None of the existing NMEA parsers fit my
 requirements for such a low powered device.
 
-The current revision here does not parse the fields contained within the NMEA
-sentences, but simply extracts each sentence and validates the checksum.
-
 NMEA is the common name for [NMEA 0183](http://en.wikipedia.org/wiki/NMEA_0183): a
 specification that defines a protocol for communication between electronic devices,
 like most GPS units. By default, NMEA compatible GPS devices communicate over a serial
@@ -63,6 +60,8 @@ namespace gps_test
   }
 }
 ```
+
+While parsing each sentence, the parser records the starting offset of each field. You can retrieve the value of specific fields using the get* methods on the parser object.
 
 For examples of parsing specific NMEA sentences, see the `examples` directory.
 
