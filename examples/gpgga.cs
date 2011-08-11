@@ -5,7 +5,7 @@ namespace NMEA.Examples
 {
     class GPGGA
     {
-        private NmeaParser parser = new NmeaParser();
+        private NMEA.Parser parser = new NMEA.Parser();
 
 		///<summary>
 		/// Parses GPGGA sentences from the given buffer and returns true
