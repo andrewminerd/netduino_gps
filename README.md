@@ -64,6 +64,8 @@ namespace gps_test
 }
 ```
 
+For examples of parsing specific NMEA sentences, see the `examples` directory.
+
 References
 ==========
 
