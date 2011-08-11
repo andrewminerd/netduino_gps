@@ -42,7 +42,7 @@ namespace gps_test
 {
   public class Program
   {
-    static NmeaParser parser = new NmeaParser();
+    static NMEA.Parser parser = new NMEA.Parser();
 
     private static void onRecv(Object sender, SerialDataReceivedEventArgs args) {
       SerialPort input = (SerialPort)sender;
